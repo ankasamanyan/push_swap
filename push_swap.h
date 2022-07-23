@@ -3,18 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:29:06 by akasaman          #+#    #+#             */
-/*   Updated: 2022/07/19 16:24:25 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/07/23 18:49:32 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
-# include <unistd.h>
-# include <stdio.h>
+# include "Libft/libft.h"
+// # include "ft_printf/ft_printf.h"
+// # include "get_next_line/get_next_line.h"
 
+void	push_a(t_list **stack_a, t_list **stack_b);
+void	push_b(t_list **stack_a, t_list **stack_b);
+
+// typedef struct s_list
+// {
+// 	int				*content;
+// 	struct t_list	*next;
+	
+// }	t_list;
 
 
 #endif
