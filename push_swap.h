@@ -6,13 +6,14 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:29:06 by akasaman          #+#    #+#             */
-/*   Updated: 2022/07/23 18:49:32 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/07/24 02:14:16 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # include "Libft/libft.h"
+# include <stdio.h>
 // # include "ft_printf/ft_printf.h"
 // # include "get_next_line/get_next_line.h"
 

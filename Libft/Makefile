@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+         #
+#    By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/05 01:24:17 by ankasamanya       #+#    #+#              #
-#    Updated: 2022/07/19 16:11:24 by akasaman         ###   ########.fr        #
+#    Updated: 2022/07/26 16:04:04 by ankasamanya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

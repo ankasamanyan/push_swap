@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 16:22:44 by akasaman          #+#    #+#             */
-/*   Updated: 2022/07/23 20:06:55 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/07/26 18:43:06 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,21 @@ void	push_b(t_list **stack_a, t_list **stack_b)
 	}
 }
 
-// void	rotate_a(t_list **stack_a)
-// {
-// // 	Shift up all elements of stack a by 1.
-// // 	The first element becomes the last one.
+void	rotate_a(t_list **stack_a)
+{
+// 	Shift up all elements of stack a by 1.
+// 	The first element becomes the last one.
+	// t_list	*head;
+	// t_list	*last;
+	t_list	*temp;
 
-	
-// }
+	if (ft_lstsize(*stack_a) > 1)
+	{
+		temp = *stack_a; //
+		*stack_a = temp->next; // head ponts to 2nd element
+		temp->next = NULL;
+		ft_lstadd_back(stack_a, temp); // putting first element to the back
+	// 	last = ft_lstlast(*stack_a); // get the new last element
+	// 	last->next = NULL; // pretty self explanatory
+	}
+}
