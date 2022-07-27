@@ -6,40 +6,46 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:28:08 by akasaman          #+#    #+#             */
-/*   Updated: 2022/07/26 16:00:38 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/07/27 03:23:52 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(void)
+int	check_input(int argc, char **argv, t_vars *vars)
 {
-	// t_list	**stack_a;
-	t_list	*stack_a;
-	t_list	*temp;
-	// t_list	*stack_b;
-	t_list	*n1, *n2, *n3;
+	int	i;
+	int	*temp;
 
-	// push_a(&stack_a, &stack_b)
-	//fill 'em up;
-	n1 = ft_lstnew((int *)18);
-	n2 = ft_lstnew((int *)7);
-	n3 = ft_lstnew((int *)73);
-	
-	//link 'em up;
-	stack_a = n1;
-	n1->next = n2;
-	n2->next = n3;
-	n3->next = NULL;
-
-	
-	temp = stack_a;
-	//print 'em out;
-	while (temp != NULL)
+	if ( argc < 2)
+		exit(0);
+	//check if arguments are valid
+	i = 1;
+	while (argc-- > 1)
 	{
-		printf("%i -> ", *(int *)temp->content);
-		temp = temp->next;
+		temp = malloc(sizeof(int *));
+		*temp = ft_atoi(argv[i++]);
+		ft_lstadd_back(&(vars->head_a),ft_lstnew(temp));
 	}
-	
+	return (0);
+}
+
+void print_content(void *content)
+{
+	printf("%i -> ", *(int *)content);
+}
+
+int main(int argc, char **argv)
+{
+	t_vars	vars;
+
+	vars.head_a = NULL;
+	vars.head_b = NULL;
+	check_input(argc, argv, &vars);
+	push_b(&vars.head_a, &vars.head_b);
+	rotate_a(&vars.head_a);
+	ft_lstiter(vars.head_a, &print_content);
+	printf("\n");
+	ft_lstiter(vars.head_b, &print_content);
 	return (0);
 }

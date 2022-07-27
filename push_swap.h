@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:29:06 by akasaman          #+#    #+#             */
-/*   Updated: 2022/07/24 02:14:16 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/07/27 03:11:43 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 # define FRACTOL_H
 # include "Libft/libft.h"
 # include <stdio.h>
-// # include "ft_printf/ft_printf.h"
-// # include "get_next_line/get_next_line.h"
 
 void	push_a(t_list **stack_a, t_list **stack_b);
 void	push_b(t_list **stack_a, t_list **stack_b);
+void	rotate_a(t_list **stack_a);
+
+typedef struct s_vars
+{
+	t_list *head_a;
+	t_list *head_b;
+}	t_vars;
 
 // typedef struct s_list
 // {
