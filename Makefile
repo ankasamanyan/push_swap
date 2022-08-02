@@ -6,13 +6,13 @@
 #    By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/18 17:18:44 by akasaman          #+#    #+#              #
-#    Updated: 2022/07/26 16:03:44 by ankasamanya      ###   ########.fr        #
+#    Updated: 2022/08/02 09:20:42 by ankasamanya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC =	push_swap.c instructions.c
+SRC =	push_swap.c instructions.c input.c
 
 OBJ =	$(SRC:.c=.o)
 
@@ -28,7 +28,6 @@ all: $(NAME)
 %.o: %.c
 	@$(CC) $(FLAGS) -c $< -o $@
 	@echo "\033[92m.\033[0m\c"
-
 
 $(NAME): $(OBJ) $(SRC)
 	@$(MAKE) -C Libft
