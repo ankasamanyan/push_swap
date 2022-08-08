@@ -6,13 +6,13 @@
 #    By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/18 17:18:44 by akasaman          #+#    #+#              #
-#    Updated: 2022/08/02 09:20:42 by ankasamanya      ###   ########.fr        #
+#    Updated: 2022/08/08 02:00:38 by ankasamanya      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-SRC =	push_swap.c instructions.c input.c
+SRC =	push_swap.c instructions.c input.c sort.c message.c 
 
 OBJ =	$(SRC:.c=.o)
 

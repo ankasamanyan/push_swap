@@ -3,31 +3,110 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 09:15:35 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/04 18:36:47 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/08/08 15:46:33 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_input(int argc, char **argv, t_vars *vars)
+int	check_input(int argc, char **argv)
 {
-
 	if ( argc < 2)
 		exit(0);
-	//check if arguments are valid
-	//check if_isdigit
-	//check for int overflow?
-	if (ft_isdigit(argv))
-	{
-		// fill_stack_a(argc, argv, vars);
-		put_in_array(argc, argv, vars);
-		print_2d_array();
-	}
-	
+	check_valid(argc, argv);
+	check_overflow(argc, argv);
+	check_repeat(argc,argv);
+	if ( argc == 2)
+		exit(0);
 	return (0);
+}
+
+void	check_overflow(int argc, char **argv)
+{
+	int	i;
+
+	i = 1;
+	while (argc-- > 1)
+	{
+		if ((argv[i][0] == '-' || argv[i][0] == '+') 
+			&& ft_strlen(argv[i]) == 11)
+		{
+			if (ft_strncmp("-2147483648",argv[i], ft_strlen("-2147483648")) < 0)
+				print_message();
+		}
+		else if (ft_strlen(argv[i]) == 10)
+		{
+			if (ft_strncmp("2147483647",argv[i], ft_strlen("2147483647")) < 0)
+				print_message();
+		}
+		else if (ft_strlen(argv[i]) > 11)
+			print_message();
+		i++;
+	}
+}
+
+int	sign_handle(char **argv, int i, int j)
+{
+	int sign;
+
+	sign = 0;
+	if ((argv[i][sign] == '-' || argv[i][sign] == '+') && sign == 0)
+	{
+		sign++;
+		while (argv[i][sign] != '\0')
+		{
+			if (ft_isdigit((argv[i][sign])) == 0 )
+				print_message();
+			sign++;
+		}
+		j++;
+	}
+	else
+		print_message();
+	return (j);
+}
+
+void	check_valid(int argc, char **argv)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (argc-- > 1)
+	{
+		j = 0;
+		while ( argv[i][j]!= '\0')
+		{
+			if (ft_isdigit((argv[i][j])) == 0 )
+				j = sign_handle(argv, i, j);
+			j++;
+		}
+		i++;
+	}
+}
+
+void	check_repeat(int argc, char **argv)
+{
+	int	i;
+	int	j;
+	int	temp;
+
+	i = 1;
+	temp = argc;
+	while (argc-- > 1)
+	{
+		j = i + 1;
+		while (j < temp)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+				print_message();
+			j++;
+		}
+		i++;
+	}
 }
 
 void	fill_stack_a(int argc, char **argv, t_vars *vars)
@@ -53,41 +132,22 @@ void	print_content(void *content)
 void	put_in_array(int argc, char **argv, t_vars *vars)
 {
 	int	i;
-	
+
 	i = 0;
 	while (argc-- > 1)
 	{
-		vars->array = ft_calloc(argc, sizeof(char *));
-		vars->array[i++] = argv[i];
+			vars->array = malloc(sizeof(int *));
+			vars->array[i] = ft_atoi(argv[i + 1]);
+			ft_printf("%i\n",vars->array[i++]);
 	}
 }
-
-
-void	print_2d_array(char	**arr, int fd)
-{
-	int	i;
-
-	i = 0;
-	if (arr)
-	{
-		while (arr[i] != NULL)
-		{
-			ft_putstr_fd(arr[i], fd);
-			if (arr[i][ft_strlen(arr[i]) - 1] != '\n')
-				ft_putchar_fd('\n', fd);
-			i++;
-		}
-	}
-}
-//sort them
-//index them
 
 void	find_max_bits(void *content)
 {	
 	t_vars vars;
-	int i = 32;
+	int i; 
 
-	// ft_printf("%i\n", vars.argc);
+	i = 32;
 	while (i-- && vars.argc-- > 1)
 	{
 		if (*(int *)content & 1 << i)
@@ -96,5 +156,4 @@ void	find_max_bits(void *content)
 			break;
 		}
 	}
-	// return 0;
 }
