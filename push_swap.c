@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:28:08 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/08 15:41:40 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/09 03:21:24 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main(int argc, char **argv)
 	vars.head_a = NULL;
 	vars.head_b = NULL;
 	vars.argc = argc;
-	check_input(argc, argv, &vars);
+	check_input(argc, argv);
 	put_in_array(argc, argv, &vars);
-	//just_sort();
+	just_sort(&vars);
 	//just_index();
 	fill_stack_a(argc, argv, &vars);
 	//raaadix_baby();

@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:29:06 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/08 15:46:41 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/09 04:05:25 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_vars
 	int		argc;
 	int		*array;
 	int		*index;
+	int		arr_len;
 }	t_vars;
 
 /* Input checks */
@@ -30,17 +31,19 @@ void	check_valid(int argc, char **argv);
 void	check_repeat(int argc, char **argv);
 void	check_overflow(int argc, char **argv);
 int		sign_handle(char **argv, int i, int j);
+/* Help functions */
 void 	print_content(void *content);
-void	print_2d_array(char	**arr, int fd);
 /* Error message */
 void	print_message(void);
 /* Operations */
+void	rotate_a(t_list **stack_a);
 void	push_a(t_list **stack_a, t_list **stack_b);
 void	push_b(t_list **stack_a, t_list **stack_b);
-void	rotate_a(t_list **stack_a);
 /* Input handle */
-void	put_in_array(int argc, char **argv, t_vars *vars);
 void	find_max_bits(void *content);
+void	put_in_array(int argc, char **argv, t_vars *vars);
 void	fill_stack_a(int argc, char **argv, t_vars *vars);
+void	just_sort(t_vars *vars);
+void	just_index(t_vars *vars);
 
 #endif
