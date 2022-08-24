@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 20:35:52 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/24 14:17:50 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/24 15:14:23 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,17 @@ void	just_sort(t_vars *vars)
 	}
 }
 
+void print_int_arr(int argc, int *arr)
+{
+	int i = 0;
+	while ((i < argc))
+	{
+		printf("%i\n", arr[i]);
+		i++;
+	}
+	
+}
+
 void	just_index(t_vars *vars, t_list **stack)
 {
 	int		i;
@@ -46,7 +57,7 @@ void	just_index(t_vars *vars, t_list **stack)
 	while (ptr)
 	{
 		i = 0;
-		while (i < vars->argc - 1)
+		while (i < vars->argc)
 		{
 			if (*((int *)ptr->content) == vars->array[i])
 			{
@@ -65,7 +76,7 @@ void	put_in_array(int argc, char **argv, t_vars *vars)
 	int	i;
 
 	i = 0;
-	vars->array = malloc(sizeof(int *));
+	vars->array = malloc(sizeof(int) * vars->argc);
 	while (argc-- > 1)
 	{
 		vars->array[i] = ft_atoi(argv[i + 1]);

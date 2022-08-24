@@ -6,11 +6,15 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:28:08 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/24 14:16:48 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/24 15:13:37 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+// void print_int_arr(int argc, int *arr);
+
 
 int	main(int argc, char **argv)
 {
@@ -40,4 +44,4 @@ int	main(int argc, char **argv)
 // rotate_a(&vars.head_a);
 // ft_lstiter(vars.head_a, &print_content);
 // ft_lstiter(vars.head_b, &print_content);
-// printf("%i\n%i\n", INT32_MAX, INT32_MIN);
+// printf("%i\n%i\n", INT32_MAX, INT32_MIN);e
