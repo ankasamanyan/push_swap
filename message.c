@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   message.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
+/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 02:01:08 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/09 04:05:51 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/24 15:44:32 by akasaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,9 @@ void	print_message(void)
 void	print_content(void *content)
 {
 	printf("%i -> ", *(int *)content);
+}
+
+void	free_stuffy(void *content)
+{
+	free(content);
 }

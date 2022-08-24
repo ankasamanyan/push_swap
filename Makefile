@@ -3,17 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+         #
+#    By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/18 17:18:44 by akasaman          #+#    #+#              #
-#    Updated: 2022/08/21 15:53:42 by ankasamanya      ###   ########.fr        #
+#    Updated: 2022/08/24 17:14:44 by akasaman         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
 SRC =	push_swap.c instructions.c input.c sort.c message.c raaadix_baby.c
-
 OBJ =	$(SRC:.c=.o)
 
 CC = gcc

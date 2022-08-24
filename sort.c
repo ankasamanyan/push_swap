@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
+/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 20:35:52 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/24 15:14:23 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/24 17:55:30 by akasaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,6 @@ void	just_sort(t_vars *vars)
 	}
 }
 
-void print_int_arr(int argc, int *arr)
-{
-	int i = 0;
-	while ((i < argc))
-	{
-		printf("%i\n", arr[i]);
-		i++;
-	}
-	
-}
-
 void	just_index(t_vars *vars, t_list **stack)
 {
 	int		i;
@@ -60,9 +49,7 @@ void	just_index(t_vars *vars, t_list **stack)
 		while (i < vars->argc)
 		{
 			if (*((int *)ptr->content) == vars->array[i])
-			{
 				break ;
-			}
 			i++;
 		}
 		*(int *)(ptr->content) = i;
@@ -98,7 +85,7 @@ void	fill_stack_a(int argc, char **argv, t_vars *vars)
 	}
 }
 
-void	find_max_bits(t_vars vars)
+int	find_max_bits(t_vars vars)
 {
 	int		i;
 
@@ -107,9 +94,7 @@ void	find_max_bits(t_vars vars)
 	while (i-- >= 0)
 	{
 		if (vars.argc & 1 << i)
-		{	
-			ft_printf("%i\n", i);
 			break ;
-		}	
 	}
+	return (i);
 }
