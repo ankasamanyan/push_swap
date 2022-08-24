@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/06 20:35:52 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/21 15:44:58 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/24 14:17:50 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	just_sort(t_vars *vars)
 	int	temp;
 
 	i = 0;
-	while (i < vars->argc - 1)
+	while (i < vars->argc)
 	{
 		j = i + 1;
-		while (j < vars->argc - 1)
+		while (j < vars->argc)
 		{
 			if (vars->array[i] > vars->array[j])
 			{
@@ -87,19 +87,18 @@ void	fill_stack_a(int argc, char **argv, t_vars *vars)
 	}
 }
 
-// void	find_max_bits(void *content)
-// {
-// 	t_vars	vars;
-// 	int		i;
+void	find_max_bits(t_vars vars)
+{
+	int		i;
 
-// 	i = 32;
-// 	printf("number being tested %i\n", *(int *)content);
-// 	while (i-- >= 0 && vars.argc-- > 1)
-// 	{
-// 		if (*(int *)content & 1 << i)
-// 		{
-// 			ft_printf("%i\n", i);
-// 			break ;
-// 		}
-// 	}
-// }
+	i = 32;
+	vars.argc = vars.argc - 1;
+	while (i-- >= 0)
+	{
+		if (vars.argc & 1 << i)
+		{	
+			ft_printf("%i\n", i);
+			break ;
+		}	
+	}
+}
