@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:29:06 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/24 17:29:46 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/08/25 04:52:01 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	put_in_array(int argc, char **argv, t_vars *vars);
 void	fill_stack_a(int argc, char **argv, t_vars *vars);
 /* Sorting */
 void	just_sort(t_vars *vars);
-void	raaadix_baby(t_vars vars);
+void	raaadix_baby(t_vars *vars, t_list **stack_a, t_list **stack_b);
 /* Free stuff */
 void	free_stuffy(void *content);
 

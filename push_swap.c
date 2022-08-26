@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:28:08 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/24 17:32:32 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/08/26 03:18:16 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,13 @@ int	main(int argc, char **argv)
 	vars.head_b = NULL;
 	vars.argc = argc - 1;
 	check_input(argc, argv);
+	//check_sorted();
 	put_in_array(argc, argv, &vars);
 	just_sort(&vars);
 	fill_stack_a(argc, argv, &vars);
 	just_index(&vars, &vars.head_a);
-	raaadix_baby(vars);
+	//smol_stack();
+	raaadix_baby(&vars, &vars.head_a, &vars.head_b);
 	ft_lstclear(&vars.head_a, &free_stuffy);
 	return (0);
 }
-	// ft_lstiter(vars.head_a, &print_content);
-	// printf("\n");
-	// ft_lstiter(vars.head_a, &print_content);
