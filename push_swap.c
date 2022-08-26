@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:28:08 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/26 03:18:16 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/26 23:17:40 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int	main(int argc, char **argv)
 	vars.head_b = NULL;
 	vars.argc = argc - 1;
 	check_input(argc, argv);
-	//check_sorted();
 	put_in_array(argc, argv, &vars);
 	just_sort(&vars);
 	fill_stack_a(argc, argv, &vars);
@@ -30,3 +29,6 @@ int	main(int argc, char **argv)
 	ft_lstclear(&vars.head_a, &free_stuffy);
 	return (0);
 }
+//swap_a();
+//smol_stack();
+//check_list_sort();

@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:29:06 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/25 04:52:01 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/26 22:16:23 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	check_valid(int argc, char **argv);
 void	check_repeat(int argc, char **argv);
 void	check_overflow(int argc, char **argv);
 int		sign_handle(char **argv, int i, int j);
+void	check_sort(int argc, char **argv);
 /* Error message */
 void	print_message(void);
 /* Help functions */

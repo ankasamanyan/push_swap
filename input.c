@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 09:15:35 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/24 17:45:58 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/08/26 22:17:00 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	check_input(int argc, char **argv)
 	check_valid(argc, argv);
 	check_overflow(argc, argv);
 	check_repeat(argc, argv);
+	check_sort(argc, argv);
 	if (argc == 2)
 		exit(0);
 	return (0);

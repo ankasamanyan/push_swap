@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:53:47 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/26 03:26:24 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/26 23:18:05 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,25 @@ void	raaadix_baby(t_vars *vars, t_list **stack_a, t_list **stack_b)
 			push_a(stack_a, stack_b);
 		i++;
 	}
+}
+
+void	check_sort(int argc, char **argv)
+{
+	int	i;
+	int	j;
+	int	temp;
+	int	count;
+
+	i = 1;
+	count = -1;
+	temp = argc;
+	j = 0;
+	while (i + 1 < argc)
+	{
+		if (ft_atoi(argv[i]) < ft_atoi(argv[i + 1]))
+			count++;
+		i++;
+	}
+	if (count == argc - 3)
+		exit(0);
 }
