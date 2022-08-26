@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 16:22:44 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/26 23:44:57 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/27 00:16:01 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,23 @@ void	rotate_a(t_list **stack_a)
 		temp->next = NULL;
 		ft_lstadd_back(stack_a, temp);
 		write(1, "ra\n", 3);
+	}
+}
+
+void	swap_a(t_list **stack_a)
+{
+	t_list	*head;
+	t_list	*second;
+	t_list	*third;
+
+	if (ft_lstsize(*stack_a) > 1)
+	{
+		head = *stack_a;
+		second = head->next;
+		third = second->next;
+		second->next = head;
+		head->next = third;
+		*stack_a = second;
+		write(1, "sa\n", 3);
 	}
 }

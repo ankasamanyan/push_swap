@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:29:06 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/26 22:16:23 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/27 00:06:42 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	print_content(void *content);
 void	rotate_a(t_list **stack_a);
 void	push_a(t_list **stack_a, t_list **stack_b);
 void	push_b(t_list **stack_a, t_list **stack_b);
+void	swap_a(t_list **stack_a);
 /* Input handle */
 int		find_max_bits(t_vars vars);
 void	just_index(t_vars *vars, t_list **stack);
