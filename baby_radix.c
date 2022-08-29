@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   baby_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
+/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:53:47 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/29 11:13:51 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/29 19:54:53 by akasaman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	check_sort(int argc, char **argv)
 		exit(0);
 }
 
-void	smol_stack(int argc, char **argv, t_vars *vars)
+void	smol_stack(int argc, t_vars *vars)
 {
 	if (argc == 3)
 	{
@@ -71,36 +71,67 @@ void	smol_stack(int argc, char **argv, t_vars *vars)
 	}
 	else if (argc == 4)
 	{
-		case_3(argv, &vars->head_a);
+		case_3(&vars->head_a);
 		ft_lstiter(vars->head_a, &print_content);
 		printf("\n");
 		exit(0);
 	}
-	// else if 
+	else if (argc == 6)
+	{
+		case_5(&vars->head_a, &vars->head_b);
+		ft_lstiter(vars->head_a, &print_content);
+		printf("\n");
+		exit(0);
+	}
 }
 
-void	case_3(char **argv, t_list **stack_a)
+void	case_3(t_list **stack_a)
 {
-	
-	if ((ft_atoi(argv[1]) > ft_atoi(argv[2])) && (ft_atoi(argv[2])
-			< ft_atoi(argv[3])) && (ft_atoi(argv[1]) < ft_atoi(argv[3])))
+	int		first;
+	int		second;
+	int		third;
+
+	first = *((int *)(*stack_a)->content);
+	second = *((int *)(*stack_a)->next->content);
+	third = *((int *)ft_lstlast(*stack_a)->content);
+	if ((first > second) && (second < third) && (first < third))
 		swap_a(stack_a);
-	else if ((ft_atoi(argv[1]) < ft_atoi(argv[2])) && (ft_atoi(argv[2])
-			> ft_atoi(argv[3])) && (ft_atoi(argv[1]) > ft_atoi(argv[3])))
+	else if ((first < second) && (second > third) && (first > third))
 		rev_rotate_a(stack_a);
-	else if ((ft_atoi(argv[1]) > ft_atoi(argv[2])) && (ft_atoi(argv[2])
-			< ft_atoi(argv[3])) && (ft_atoi(argv[1]) > ft_atoi(argv[3])))
+	else if ((first > second) && (second < third) && (first > third))
 		rotate_a(stack_a);
-	else if ((ft_atoi(argv[1]) < ft_atoi(argv[2])) && (ft_atoi(argv[2])
-			> ft_atoi(argv[3])) && (ft_atoi(argv[1]) < ft_atoi(argv[3])))
+	else if ((first < second) && (second > third) && (first < third))
 	{	
 		swap_a(stack_a);
 		rotate_a(stack_a);
 	}
-	else if ((ft_atoi(argv[1]) > ft_atoi(argv[2])) && (ft_atoi(argv[2])
-			> ft_atoi(argv[3])) && (ft_atoi(argv[1]) > ft_atoi(argv[3])))
+	else if ((first > second) && (second > third) && (first > third))
 	{
 		swap_a(stack_a);
 		rev_rotate_a(stack_a);
 	}
+}
+
+void	case_5(t_list **stack_a, t_list **stack_b)
+{
+	int	i;
+	int	content;
+
+	i = 0;
+	while (i < 2)
+	{
+		content = *((int *)(*stack_a)->content);
+		if (content == 0 || content == 1)
+		{
+			push_b(stack_a, stack_b);
+			i++;
+		}
+		else
+			rotate_a(stack_a);
+	}
+	case_3(stack_a);
+	push_a(stack_a, stack_b);
+	push_a(stack_a, stack_b);
+	if (*((int *)(*stack_a)->content) == 1)
+		swap_a(stack_a);
 }
