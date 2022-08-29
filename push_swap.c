@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:28:08 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/27 00:19:56 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/28 23:41:25 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ int	main(int argc, char **argv)
 	put_in_array(argc, argv, &vars);
 	just_sort(&vars);
 	fill_stack_a(argc, argv, &vars);
+	ft_lstiter(vars.head_a, &print_content);
+	printf("\n");
+	smol_stack(argc, argv, &vars);
 	just_index(&vars, &vars.head_a);
-	// smol_stack();
 	raaadix_baby(&vars, &vars.head_a, &vars.head_b);
 	ft_lstclear(&vars.head_a, &free_stuffy);
 	return (0);

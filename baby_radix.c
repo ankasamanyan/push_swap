@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raaadix_baby.c                                     :+:      :+:    :+:   */
+/*   baby_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:53:47 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/26 23:18:05 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/29 11:13:51 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,49 @@ void	check_sort(int argc, char **argv)
 	}
 	if (count == argc - 3)
 		exit(0);
+}
+
+void	smol_stack(int argc, char **argv, t_vars *vars)
+{
+	if (argc == 3)
+	{
+		swap_a(&vars->head_a);
+		ft_lstiter(vars->head_a, &print_content);
+		printf("\n");
+		exit(0);
+	}
+	else if (argc == 4)
+	{
+		case_3(argv, &vars->head_a);
+		ft_lstiter(vars->head_a, &print_content);
+		printf("\n");
+		exit(0);
+	}
+	// else if 
+}
+
+void	case_3(char **argv, t_list **stack_a)
+{
+	
+	if ((ft_atoi(argv[1]) > ft_atoi(argv[2])) && (ft_atoi(argv[2])
+			< ft_atoi(argv[3])) && (ft_atoi(argv[1]) < ft_atoi(argv[3])))
+		swap_a(stack_a);
+	else if ((ft_atoi(argv[1]) < ft_atoi(argv[2])) && (ft_atoi(argv[2])
+			> ft_atoi(argv[3])) && (ft_atoi(argv[1]) > ft_atoi(argv[3])))
+		rev_rotate_a(stack_a);
+	else if ((ft_atoi(argv[1]) > ft_atoi(argv[2])) && (ft_atoi(argv[2])
+			< ft_atoi(argv[3])) && (ft_atoi(argv[1]) > ft_atoi(argv[3])))
+		rotate_a(stack_a);
+	else if ((ft_atoi(argv[1]) < ft_atoi(argv[2])) && (ft_atoi(argv[2])
+			> ft_atoi(argv[3])) && (ft_atoi(argv[1]) < ft_atoi(argv[3])))
+	{	
+		swap_a(stack_a);
+		rotate_a(stack_a);
+	}
+	else if ((ft_atoi(argv[1]) > ft_atoi(argv[2])) && (ft_atoi(argv[2])
+			> ft_atoi(argv[3])) && (ft_atoi(argv[1]) > ft_atoi(argv[3])))
+	{
+		swap_a(stack_a);
+		rev_rotate_a(stack_a);
+	}
 }
