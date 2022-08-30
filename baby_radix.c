@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   baby_radix.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:53:47 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/29 19:54:53 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/08/29 20:53:30 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,22 +65,16 @@ void	smol_stack(int argc, t_vars *vars)
 	if (argc == 3)
 	{
 		swap_a(&vars->head_a);
-		ft_lstiter(vars->head_a, &print_content);
-		printf("\n");
 		exit(0);
 	}
 	else if (argc == 4)
 	{
 		case_3(&vars->head_a);
-		ft_lstiter(vars->head_a, &print_content);
-		printf("\n");
 		exit(0);
 	}
 	else if (argc == 6)
 	{
 		case_5(&vars->head_a, &vars->head_b);
-		ft_lstiter(vars->head_a, &print_content);
-		printf("\n");
 		exit(0);
 	}
 }

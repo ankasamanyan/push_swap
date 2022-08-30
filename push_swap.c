@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 17:28:08 by akasaman          #+#    #+#             */
-/*   Updated: 2022/08/29 19:58:05 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/08/29 20:53:51 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	main(int argc, char **argv)
 	put_in_array(argc, argv, &vars);
 	just_sort(&vars);
 	fill_stack_a(argc, argv, &vars);
-	ft_lstiter(vars.head_a, &print_content);
-	printf("\n");
 	just_index(&vars, &vars.head_a);
 	smol_stack(argc, &vars);
 	raaadix_baby(&vars, &vars.head_a, &vars.head_b);

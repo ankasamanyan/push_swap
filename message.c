@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   message.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akasaman <akasaman@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 02:01:08 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/24 15:44:32 by akasaman         ###   ########.fr       */
+/*   Updated: 2022/08/30 00:28:35 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 void	print_message(void)
 {
-	ft_printf("\033[0;31m");
 	write(2, "Error\n", 6);
-	ft_printf("\033[0m");
 	exit(0);
 }
 

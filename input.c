@@ -6,7 +6,7 @@
 /*   By: ankasamanyan <ankasamanyan@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/02 09:15:35 by ankasamanya       #+#    #+#             */
-/*   Updated: 2022/08/26 22:17:00 by ankasamanya      ###   ########.fr       */
+/*   Updated: 2022/08/30 08:25:43 by ankasamanya      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int	sign_handle(char **argv, int i, int j)
 	int	sign;
 
 	sign = 0;
-	if ((argv[i][sign] == '-' || argv[i][sign] == '+') && sign == 0)
+	if ((argv[i][sign] == '-' || argv[i][sign] == '+') && sign == 0
+		&& argv[i][sign + 1] != '\0')
 	{
 		sign++;
 		while (argv[i][sign] != '\0')
